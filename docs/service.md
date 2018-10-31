@@ -1,4 +1,5 @@
 # service模板
+> 每次创建一个service，k8s会在集群内所有节点的kube-proxy中，添加对应的规则（iptables）。比如创建一个NodePort类型的service，通过集群中任意一个node都可以使用\<nodeIP:nodePort\>访问到这个服务。service会在多个pod之间进行负载均衡。
 ```yaml
 apiVersion: v1
 kind: Service

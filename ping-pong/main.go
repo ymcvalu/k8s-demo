@@ -1,4 +1,4 @@
-package deployment_demo
+package main
 
 import (
 	"flag"

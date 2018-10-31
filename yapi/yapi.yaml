@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: yangmc-test
+  name: yapi-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: yapi
+  template:
+    metadata:
+      labels:
+        app: yapi
+    spec:
+      containers:
+        - name: yapi
+          image: registry.cn-qingdao.aliyuncs.com/yangmc/kst-yapi:1.0.0
+          ports:
+            - containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: yangmc-test
+  name: yapi-service
+spec:
+  selector:
+    app: yapi
+  type: NodePort
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+    nodePort: 30123

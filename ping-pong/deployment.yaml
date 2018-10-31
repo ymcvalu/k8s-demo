@@ -1,6 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  namespace: yangmc-test
   name: ping-pong-deployment
 spec:
   selector:
@@ -14,7 +15,7 @@ spec:
     spec:
       containers:
       - name: ping-pong
-        image: 192.168.100.12:5000/ping-pong:1.0.0
+        image: registry.cn-qingdao.aliyuncs.com/yangmc/k8s-test:1.0.0
         ports:
         - containerPort: 80
 
@@ -23,14 +24,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
+  namespace: yangmc-test
   name: ping-pong-service
 spec:
   selector:
     app: ping-pong
-  type: ClusterIP
-  #type: NodePort
+  #type: ClusterIP
+  type: NodePort
   ports:
   - protocol: TCP
     port: 8080
     targetPort: 80
-    #nodePort: 5050
+    nodePort: 30555
