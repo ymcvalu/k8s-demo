@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: yapi
-          image: registry.cn-qingdao.aliyuncs.com/yangmc/kst-yapi:1.0.0
+          image: registry.cn-qingdao.aliyuncs.com/yangmc/kst-yapi:1.0.1
           ports:
             - containerPort: 80
 

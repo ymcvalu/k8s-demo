@@ -3,7 +3,7 @@
   "adminAccount": "ymccmy66@163.com",
   "versionNotify": false,
   "db": {
-    "servername": "10.43.78.188",
+    "servername": "mongo-service.yangmc-test",
     "DATABASE": "yapi",
     "port": 27017
   },

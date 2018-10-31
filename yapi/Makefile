@@ -1,4 +1,4 @@
-TAG=kst-yapi:1.0.0
+TAG=kst-yapi:1.0.1
 
 build:
 	-docker rmi $(TAG)

@@ -8,7 +8,7 @@ spec:
     spec:
       containers:
       - name: init-yapi-db
-        image: registry.cn-qingdao.aliyuncs.com/yangmc/kst-yapi:1.0.0
+        image: registry.cn-qingdao.aliyuncs.com/yangmc/kst-yapi:1.0.1
         command: ["node", "server/install.js"]
       restartPolicy: Never
   backoffLimit: 4
