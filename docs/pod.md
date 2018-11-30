@@ -65,6 +65,8 @@ spec:         　　　　　　　#必选，Pod中容器的详细定义
     hostNetwork: false      　　#是否使用主机网络模式，默认为false，如果设置为true，表示使用宿主机网络
     volumes:        　　　　　　#在该pod上定义共享存储卷列表
     - name: string     　　 　　#共享存储卷名称 （volumes类型有很多种）
+      persistentVolumeClaim:
+        claimName: name_of_pvc
       emptyDir: {}      　　　　#类型为emtyDir的存储卷，与Pod同生命周期的一个临时目录。为空值
       hostPath: string      　　#类型为hostPath的存储卷，表示挂载Pod所在宿主机的目录
         path: string      　　#Pod所在宿主机的目录，将被用于同期中mount的目录
